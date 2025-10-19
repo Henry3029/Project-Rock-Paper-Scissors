@@ -59,7 +59,21 @@ scoreDiv.style.marginTop = "8px";
 							finalMessage.style.color = "crimson";
 							}
 					resultDiv.append(finalMessage);
-		}			
+			
+		// create play Again button
+		const playAgainBtn = document.createElement("button");
+		playAgainBtn.textContent = "Play Again 📟";
+		playAgainBtn.style.backgroundColor = "673ab7";
+		playAgainBtn.style.color = "white";
+		playAgainBtn.style.padding = "10px 20px";
+		playAgainBtn.style.fontSize = "1.1rem";
+		playAgainBtn.style.border = "none";
+		playAgainBtn.style.borderRadius = "10px";
+		playAgainBtn.style.marginTop = "15px";
+		playAgainBtn.style.cursor = "pointer";
+		playAgainBtn.addEventListener("click", resetGame); 
+		resultDiv.appendChild(playAgainBtn);
+		}
 			
 			});
 		});
@@ -80,4 +94,15 @@ scoreDiv.style.marginTop = "8px";
 		return `You lose! ${computer} beats ${human}`;
 	}
 	}
+  // reset Game
+  function resetGame() {
+  	humanScore = 0;
+      computerScore = 0;
+      gameOver = false;
+      resultDiv.textContent = "";
+      scoreDiv.textContent = "score - You: 0 | computer: 0";
+  
+  	}
+  
+  
   
